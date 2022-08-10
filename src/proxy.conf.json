@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "https://api.imgflip.com/caption_image",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}

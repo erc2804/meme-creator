@@ -1,0 +1,27 @@
+<div id="meme-selection-page">
+  <h1>Select a meme</h1>
+  <div class="memes-wrapper">
+    <button class="meme-selection-btn upload-own-variant">
+      <h1>Upload your own</h1>
+      <div>+</div>
+    </button>
+    <ng-container *ngIf="!getMemesCallRunning && memes.length > 0">
+      <button
+        class="meme-selection-btn"
+        [routerLink]="['/meme-details', meme.id]"
+        [state]="{ memeUrl: meme.url }"
+        *ngFor="let meme of memes"
+      >
+        <img [src]="meme.url" alt="" />
+      </button>
+    </ng-container>
+    <span *ngIf="getMemesCallRunning && memes.length === 0">Loading...</span>
+    <div *ngIf="!getMemesCallRunning && memes.length === 0">
+      <span
+        >Internet connection error. Please make sure you are connected to the
+        internet and
+      </span>
+      <button mat-button color="primary" (click)="getMemes()">try again</button>
+    </div>
+  </div>
+</div>

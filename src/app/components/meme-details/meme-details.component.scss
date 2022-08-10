@@ -1,0 +1,84 @@
+:host {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  > #meme-details-page {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgba(203, 227, 250, 1);
+    display: inline-block;
+    > h1 {
+      color: rgba(17, 17, 18, 0.9);
+      margin: 56px 15% 0 15%;
+    }
+    > .meme-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 56px 15% 56px 15%;
+      > .meme-img-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 50%;
+        background-color: #ffffff;
+        border: 1px solid rgba(17, 17, 18, 0.6);
+        border-radius: 4px;
+        overflow: hidden;
+        > img {
+          width: 100%;
+        }
+      }
+      > .caption-input-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        > mat-form-field {
+          width: 100%;
+        }
+        > button {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1152px) {
+  :host {
+    #meme-details-page {
+      > .meme-wrapper {
+        flex-direction: column;
+        align-items: center;
+        > .meme-img-container {
+          max-width: 75%;
+        }
+        > .caption-input-wrapper {
+          margin-top: 24px;
+          width: 75%;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 680px) {
+  :host {
+    #meme-details-page {
+      > h1 {
+        margin: 56px 16px 0 16px;
+      }
+      > .meme-wrapper {
+        margin: 56px 16px 56px 16px;
+        > .meme-img-container {
+          max-width: 100%;
+        }
+        > .caption-input-wrapper {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
